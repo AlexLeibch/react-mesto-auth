@@ -53,6 +53,8 @@
 @import url(./blocks/popup/__figure-container/popup__figure-container.css);
 @import url(./blocks/popup/__form/popup__form.css);
 @import url(./blocks/popup/__form_edit-margin/popup__form-edit-margin.css);
+@import url(./blocks/popup/__tooltip-img/popup__tooltip-img.css);
+@import url(./blocks/popup/__tooltip-description/popup__tooltip-description.css);
 /* ошибки */
 @import url(./blocks/popup/__error/popup__error.css);
 @import url(./blocks/popup/__error-active/popup__error-active.css);
