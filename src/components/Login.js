@@ -2,12 +2,12 @@ import React from "react";
 
 function Login() {
     return (
-        <section className="start-screen">
-            <h1 className="start-screen__title">Вход</h1>
-            <form className="start-screen__form">
-                <input  className="start-screen__input" placeholder="Email"/>
-                <input  className="start-screen__input" placeholder="Пароль"/>
-                <button className="start-screen__submit">Войти</button>
+        <section className="login">
+            <h1 className="login__title">Вход</h1>
+            <form className="login__form">
+                <input  className="login__input" placeholder="Email"/>
+                <input  className="login__input" placeholder="Пароль"/>
+                <button className="login__button-submit">Войти</button>
             </form>
         </section>
     );

@@ -5,7 +5,7 @@ import {Link, useLocation} from "react-router-dom";
 function Header({loggedIn, email, handleSignOut}) {
 
     const {pathname} = useLocation()
-    const text = `${pathname === '/sign-out' ? 'Регистрация' : 'Войти'}`
+    const text = `${pathname === '/sign-in' ? 'Регистрация' : 'Войти'}`
     const linkRoute = `${pathname === '/sign-in' ? '/sign-up' : '/sign-in'}`
     
 
