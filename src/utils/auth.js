@@ -1,6 +1,6 @@
 export const BASE_URL = 'https://auth.nomoreparties.co';
 
-const chekResponse = (res) => {
+const checkResponse = (res) => {
     if (!res.ok) {
         return Promise.reject(`${res.status}`);
     }
@@ -15,7 +15,7 @@ export const register = (email, password) => {
             'content-type': 'application/json'
         },
         body: JSON.stringify({email, password})
-    })
+    }).then(res => checkResponse(res))
 }
 
 
@@ -27,7 +27,7 @@ export const authorize = ({email, password}) => {
             'content-type': 'application/json'
         },
         body: JSON.stringify({email, password})
-    }).then(chekResponse) 
+    }).then(checkResponse) 
     .then((data) => {
         if(data.token) {
             localStorage.setItem('jwt', data.token)
@@ -44,7 +44,7 @@ export const getContent = (token) => {
             'Authorization': `Bearer ${token}`
         }
     })
-    .then(chekResponse)
+    .then(checkResponse)
     .then((data) => data)
 }
 

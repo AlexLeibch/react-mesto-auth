@@ -165,7 +165,7 @@ function App() {
 
 
 
-    function handleToolltipInfoOpen() {
+    function handleTooltipInfoOpen() {
         setIsTooltipOpen(true)
     }
 
@@ -174,13 +174,13 @@ function App() {
         .then((res) => {
             if (res.status === 201) {
                 handleTooltipInfo({imgPath: registrationAccept, text: 'Вы успешно зарегестрированы'})
-                handleToolltipInfoOpen()
+                handleTooltipInfoOpen()
                 history.push('/sign-in')
             }
             })
         .catch((err) => {
             handleTooltipInfo({imgPath: registrationReject, text: 'Что - то пошло не так'})
-            handleToolltipInfoOpen()
+            handleTooltipInfoOpen()
             console.log(err)
         })
     }
@@ -194,11 +194,11 @@ function App() {
         setLoggedIn(true);
         handleTooltipInfo({imgPath: registrationAccept, text: 'Вы успешно авторизированы'});
         history.push('/')
-        handleToolltipInfoOpen()
+        handleTooltipInfoOpen()
 
         }).catch((err) => {
             handleTooltipInfo({imgPath: registrationReject, text: 'Что - то пошло не так'})
-            handleToolltipInfoOpen()
+            handleTooltipInfoOpen()
 
             console.log(err)
 
@@ -213,7 +213,7 @@ function App() {
       <CurrentUserContext.Provider value={currentUser}>
         <div className="page">
             <div className="page__root">
-            <Header handleSignOut={handleSignOut}/>
+            <Header handleSignOut={handleSignOut} loggedIn={loggedIn} email={email}/>
                 <Switch>
                     <Route path="/sign-in">
                         <Login authorization={authorization}/>
