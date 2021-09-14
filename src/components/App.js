@@ -177,14 +177,12 @@ function App() {
     auth
       .register(email, password)
       .then((res) => {
-        if (res.status === 201) {
           handleTooltipInfo({
             imgPath: registrationAccept,
             text: "Вы успешно зарегестрированы",
           });
           handleToolltipInfoOpen();
           history.push("/sign-in");
-        }
       })
       .catch((err) => {
         handleTooltipInfo({
@@ -204,6 +202,7 @@ function App() {
           return;
         }
         setLoggedIn(true);
+        setEmail(email)
         handleTooltipInfo({
           imgPath: registrationAccept,
           text: "Вы успешно авторизированы",
